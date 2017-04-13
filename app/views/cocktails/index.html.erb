@@ -1,0 +1,28 @@
+<div class= "text-center">
+  <h1 >Mr Cocktails</h1>
+  <br>
+  <h2 >Pick any Cocktail from our List</h2>
+<br>
+</div>
+
+<div class= "container text-center">
+  <div class= row>
+    <% @cocktails.each do |cocktail| %>
+    <div class=" col-xs-12 col-sm-6 col-md-4">
+
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+        <div class="card-category">Popular</div>
+        <div class="card-description">
+          <h2><%= cocktail.name %></h2>
+        </div>
+        <%= image_tag "shaker_avatar.png" , class:"card-user avatar" %>
+        <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+      </div>
+
+
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
