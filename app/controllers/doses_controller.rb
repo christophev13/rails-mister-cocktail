@@ -9,7 +9,11 @@ def create
   @cocktail = Cocktail.find(params[:cocktail_id])
   @dose.cocktail = @cocktail
   @dose.save
-  redirect_to cocktail_path(@cocktail)
+  if @dose.save
+    redirect_to cocktail_path(@cocktail)
+  else
+    render "cocktails/show"
+  end
 end
 
   private
