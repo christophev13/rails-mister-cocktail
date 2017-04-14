@@ -1,0 +1,13 @@
+
+<div class="form-horizontal ">
+  <div class="form-group">
+    <%= simple_form_for(@cocktail) do |f| %>
+      <%= f.error_notification %>
+
+      <%= f.input :name %>
+
+      <div class="btn"><%= f.submit %></div>
+    <% end %>
+  </div>
+</div>
+<%= link_to "Back to Home", root_path%>
