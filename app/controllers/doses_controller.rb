@@ -16,6 +16,9 @@ def create
   end
 end
 
+def delete
+end
+
   private
 
   def dose_params

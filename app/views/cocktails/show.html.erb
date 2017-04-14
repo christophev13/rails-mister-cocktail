@@ -1,16 +1,18 @@
 <div class="container">
-<div class="row">
+  <div class="row">
 
 <div class="col-xs-12 col-sm-8">
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(45,108,177,0.6) 0%, rgba(45,108,177,0.9) 50%), url('cocktail_background.jpeg');">
   <div class="banner-content">
     <h1><%= @cocktail.name%></h1>
     <br>
+    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+    <br>
     <p>What's the secret:</p>
     <br>
     <ul>
       <% @cocktail.doses.each do |dose| %>
-        <li><%= dose.description %> of <%= dose.ingredient.name %></li>
+        <li><%= dose.description %> of <%= dose.ingredient.name.capitalize %></li>
       <% end %>
     </ul>
   </div>
@@ -21,6 +23,7 @@
 <div class="col-xs-12 col-sm-4">
   <div class="form-horizontal ">
     <div class="form-group">
+    <h2>Something missing?</h2>
       <%= simple_form_for [@cocktail, @dose] do |f| %>
         <%= f.error_notification %>
 
